@@ -33,7 +33,7 @@ items.forEach(item => {
         scrollTrigger: {
             trigger: '.selected-work_wrapper',
             start: 'top bottom',
-            end: 'bottom bottom',
+            end: 'bottom top',
             scrub: true
         }
     })
