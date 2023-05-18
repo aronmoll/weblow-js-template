@@ -1,4 +1,4 @@
-import './styles/style.css'
+'./styles/style.css'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import Lenis from '@studio-freight/lenis'
