@@ -1,4 +1,4 @@
-mport './styles/style.css'
+import './styles/style.css'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import Lenis from '@studio-freight/lenis'
@@ -38,3 +38,20 @@ items.forEach(item => {
         }
     })
 })
+
+const buttons = document.querySelectorAll('.nav-button');
+const sections = document.querySelectorAll('[scroll-trigger]');
+
+for (let i = 0; i < sections.length; i++) {
+  const wipe = buttons[i].querySelector('.nav-button_wipe');
+  
+  gsap.to(wipe, {
+    scrollTrigger: {
+      trigger: sections[i],
+      start: "top bottom", 
+      end: "bottom bottom", 
+      scrub: 0.5,
+    },
+    height: "105%", // changed from width to height
+  })
+}
