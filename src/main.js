@@ -39,6 +39,9 @@ items.forEach(item => {
     })
 })
 
+const buttons = document.querySelectorAll('.nav-button');
+const sections = document.querySelectorAll('[scroll-trigger]');
+
 for (let i = 0; i < sections.length; i++) {
   const wipe = buttons[i].querySelector('.nav-button_wipe');
 
