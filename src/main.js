@@ -55,3 +55,16 @@ for (let i = 0; i < sections.length; i++) {
     height: "105%", 
   })
 }
+
+// Select the fixed element with the attribute "rotate"
+const element = document.querySelector('[rotate]');
+
+gsap.to(element, {
+  rotation: 360,
+  scrollTrigger: {
+    trigger: document.body,
+    start: "top top",
+    end: "bottom bottom",
+    scrub: true,
+  },
+});
