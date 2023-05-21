@@ -48,7 +48,7 @@ for (let i = 0; i < sections.length; i++) {
   gsap.to(wipe, {
     scrollTrigger: {
       trigger: sections[i],
-      start: "top bottom", 
+      start: "top 75%", 
       end: "bottom bottom", 
       scrub: 0.5,
       markers: true,
