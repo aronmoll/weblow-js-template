@@ -49,10 +49,10 @@ for (let i = 0; i < sections.length; i++) {
     scrollTrigger: {
       trigger: sections[i],
       start: "top bottom", 
-      end: "100%", 
+      end: "bottom 100%", 
       scrub: 0.5,
       markers:true,
     },
-    height: "120%", 
+    height: "105%", 
   })
 }
