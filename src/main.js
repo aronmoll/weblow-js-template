@@ -51,6 +51,7 @@ for (let i = 0; i < sections.length; i++) {
       start: "top bottom", 
       end: "100%", 
       scrub: 0.5,
+      markers:true,
     },
     height: "105%", // changed from width to height
   })
