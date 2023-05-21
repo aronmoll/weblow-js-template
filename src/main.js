@@ -2,6 +2,7 @@ import './styles/style.css'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import Lenis from '@studio-freight/lenis'
+import SplitType from 'split-type'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -55,3 +56,28 @@ for (let i = 0; i < sections.length; i++) {
     height: "105%", // changed from width to height
   })
 }
+
+window.addEventListener("DOMContentLoaded", (event) => {
+  // Split text into spans
+  let typeSplit = new SplitType("[text-split]", {
+    types: "words, chars",
+    tagName: "span"
+  });
+
+  // GSAP animation for each element that matches [letters-slide-up]
+  $("[letters-slide-up]").each(function (index) {
+    let tl = gsap.timeline({ paused: true });
+    tl.from($(this).find(".char"), { yPercent: 100, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } });
+    
+    $(this).hover(
+      function() {
+        // on mouseenter
+        tl.play();
+      }, 
+      function() {
+        // on mouseleave
+        tl.reverse();
+      }
+    );
+  });
+});
