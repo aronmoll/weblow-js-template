@@ -55,21 +55,3 @@ for (let i = 0; i < sections.length; i++) {
     height: "105%", // changed from width to height
   })
 }
-
-document.querySelectorAll('.menu-item_open').forEach(function(item) {
-  item.addEventListener('mouseenter', function() {
-    gsap.to(item.querySelector('.text-size-large.is-menu'), {
-      y: "-100%",
-      duration: 0.5,
-      ease: "power4.inOut"
-    });
-  });
-  
-  item.addEventListener('mouseleave', function() {
-    gsap.to(item.querySelector('.text-size-large.is-menu'), {
-      y: "0%",
-      duration: 0.5,
-      ease: "power4.inOut"
-    });
-  });
-});
