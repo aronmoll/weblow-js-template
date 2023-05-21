@@ -49,7 +49,7 @@ for (let i = 0; i < sections.length; i++) {
     scrollTrigger: {
       trigger: sections[i],
       start: "top bottom", 
-      end: "bottom bottom", 
+      end: "100%", 
       scrub: 0.5,
     },
     height: "105%", // changed from width to height
