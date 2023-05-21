@@ -44,17 +44,14 @@ const sections = document.querySelectorAll('[scroll-trigger]');
 
 for (let i = 0; i < sections.length; i++) {
   const wipe = buttons[i].querySelector('.nav-button_wipe');
-
+  
   gsap.to(wipe, {
     scrollTrigger: {
       trigger: sections[i],
-      start: i == problematicSectionIndex ? "center center" : "top bottom",
-      end: "bottom bottom",
+      start: "center bottom", 
+      end: "bottom bottom", 
       scrub: 0.5,
-      markers: true, // show where start and end triggers are
-      pinSpacing: false, // disable pinSpacing
     },
     height: "105%", // changed from width to height
   })
 }
-
