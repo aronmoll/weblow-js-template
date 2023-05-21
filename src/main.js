@@ -53,6 +53,6 @@ for (let i = 0; i < sections.length; i++) {
       scrub: 0.5,
       markers:true,
     },
-    height: "105%", // changed from width to height
+    height: "100%", // changed from width to height
   })
 }
