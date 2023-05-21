@@ -60,7 +60,7 @@ for (let i = 0; i < sections.length; i++) {
 const element = document.querySelector('[rotate]');
 
 gsap.to(element, {
-  rotation: 360,
+  rotation: 180,
   scrollTrigger: {
     trigger: document.body,
     start: "top top",
