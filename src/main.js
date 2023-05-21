@@ -51,7 +51,6 @@ for (let i = 0; i < sections.length; i++) {
       start: "top bottom", 
       end: "bottom bottom", 
       scrub: 0.5,
-      markers:true,
     },
     height: "105%", 
   })
