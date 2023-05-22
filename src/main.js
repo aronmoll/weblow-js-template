@@ -84,18 +84,14 @@ $(document).ready(function() {
     // Set the text of the .text-target element
     $('.text-target').text(projectName);
 
-    // Get the width of the .text-target
-    var targetWidth = $('.text-target').width();
-
-    // As there are 3 .text-target elements in .cursor-text_wrapper grid, 
-    // multiply targetWidth by 3
-    targetWidth *= 3;
+    // Get the width of the .cursor-text_wrapper
+    var wrapperWidth = $('.cursor-text_wrapper').width();
 
     // Create a GSAP timeline
     tl = gsap.timeline({repeat: -1}); // repeat indefinitely
 
-    // Animate .cursor-text_wrapper to -100% over 6 seconds
-    tl.to('.cursor-text_wrapper', {x: -targetWidth, duration: 6, ease: 'linear'});
+    // Animate .cursor-text_wrapper to -100% over 10 seconds
+    tl.to('.cursor-text_wrapper', {x: -wrapperWidth, duration: 10, ease: 'linear'});
 
     // Instantly animate back to 0%
     tl.set('.cursor-text_wrapper', {x: 0});
@@ -111,4 +107,3 @@ $(document).ready(function() {
     tl.kill();
   });
 });
-
