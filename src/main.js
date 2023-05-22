@@ -81,17 +81,17 @@ $(document).ready(function() {
     // Get the value of the project-name attribute
     var projectName = $(this).attr('project-name');
 
-    // Set the text of the two .text-target elements
+    // Set the text of the .text-target element
     $('.text-target').text(projectName);
 
-    // Get the width of one .text-target (since you'll be moving one off screen at a time)
-    var targetWidth = $('.text-target').width();
+    // Get the width of the .cursor-text_wrapper
+    var wrapperWidth = $('.cursor-text_wrapper').width();
 
     // Create a GSAP timeline
     tl = gsap.timeline({repeat: -1}); // repeat indefinitely
 
-    // Animate .cursor-text_wrapper to -100% over 6 seconds
-    tl.to('.cursor-text_wrapper', {x: -targetWidth, duration: 6, ease: 'linear'});
+    // Animate .cursor-text_wrapper to -100% over 10 seconds
+    tl.to('.cursor-text_wrapper', {x: -wrapperWidth, duration: 10, ease: 'linear'});
 
     // Instantly animate back to 0%
     tl.set('.cursor-text_wrapper', {x: 0});
