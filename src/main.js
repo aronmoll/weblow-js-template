@@ -90,8 +90,8 @@ $(document).ready(function() {
     // Create a GSAP timeline
     tl = gsap.timeline({repeat: -1}); // repeat indefinitely
 
-    // Animate .cursor-text_wrapper to -100% over 6 seconds
-    tl.to('.cursor-text_wrapper', {x: -wrapperWidth, duration: 6, ease: 'linear'});
+    // Animate .cursor-text_wrapper to -100% over 10 seconds
+    tl.to('.cursor-text_wrapper', {x: -wrapperWidth, duration: 10, ease: 'linear'});
 
     // Instantly animate back to 0%
     tl.set('.cursor-text_wrapper', {x: 0});
