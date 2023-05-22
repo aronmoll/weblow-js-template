@@ -69,30 +69,3 @@ gsap.to(element, {
     scrub: true,
   },
 });
-
-
-$(document).ready(function() {
-  // Hover over a link or a linkblock
-  $('a, .linkblock').hover(function() {
-    // Mouse is over the element, add the class
-    $('.cursor').addClass('is-hovering');
-    
-    // Apply GSAP animation
-    gsap.to('.cursor', { 
-      scale: 1, // example of scaling the cursor
-      duration: 0.5, 
-      ease: 'power2.out' 
-    });
-  }, function() {
-    // Mouse has left the element, remove the class
-    $('.cursor').removeClass('is-hovering');
-    
-    // Reset the GSAP animation
-    gsap.to('.cursor', { 
-      scale: 1.0, // reset to original size
-      duration: 0.5, 
-      ease: 'power2.out' 
-    });
-  });
-});
-
