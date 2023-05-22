@@ -69,3 +69,26 @@ gsap.to(element, {
     scrub: true,
   },
 });
+
+
+$(document).ready(function() {
+  // Create a GSAP timeline
+  var tl = gsap.timeline();
+  
+  // Hover over a link or a linkblock
+  $('a, .linkblock').hover(function() {
+    // Mouse is over the element, add the class
+    tl.to('.cursor', { 
+      duration: 0.5, 
+      className: '+=is-hovering', 
+      ease: 'power2.out' 
+    });
+  }, function() {
+    // Mouse has left the element, remove the class
+    tl.to('.cursor', { 
+      duration: 0.5, 
+      className: '-=is-hovering', 
+      ease: 'power2.out' 
+    });
+  });
+});
