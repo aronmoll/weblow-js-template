@@ -69,20 +69,3 @@ gsap.to(element, {
     scrub: true,
   },
 });
-
-// Get the cursor element
-const cursor = document.querySelector(".cursor");
-
-// Register mousemove event listener on the document
-document.addEventListener("mousemove", moveCursor);
-
-// Function to move the cursor
-function moveCursor(event) {
-  // Use GSAP to animate the cursor's position
-  gsap.to(cursor, {
-    x: event.clientX,
-    y: event.clientY,
-    duration: 0.3,
-    ease: "power2.out",
-  });
-}
