@@ -79,7 +79,7 @@ $(document).ready(function() {
     
     // Apply GSAP animation
     gsap.to('.cursor', { 
-      scale: 1.5, // example of scaling the cursor
+      scale: 1, // example of scaling the cursor
       duration: 0.5, 
       ease: 'power2.out' 
     });
