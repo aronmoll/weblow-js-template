@@ -72,23 +72,27 @@ gsap.to(element, {
 
 
 $(document).ready(function() {
-  // Create a GSAP timeline
-  var tl = gsap.timeline();
-  
   // Hover over a link or a linkblock
   $('a, .linkblock').hover(function() {
     // Mouse is over the element, add the class
-    tl.to('.cursor', { 
+    $('.cursor').addClass('is-hovering');
+    
+    // Apply GSAP animation
+    gsap.to('.cursor', { 
+      scale: 1.5, // example of scaling the cursor
       duration: 0.5, 
-      className: '+=is-hovering', 
       ease: 'power2.out' 
     });
   }, function() {
     // Mouse has left the element, remove the class
-    tl.to('.cursor', { 
+    $('.cursor').removeClass('is-hovering');
+    
+    // Reset the GSAP animation
+    gsap.to('.cursor', { 
+      scale: 1.0, // reset to original size
       duration: 0.5, 
-      className: '-=is-hovering', 
       ease: 'power2.out' 
     });
   });
 });
+
