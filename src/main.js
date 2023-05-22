@@ -70,56 +70,23 @@ gsap.to(element, {
   },
 });
 
-// Assuming you're using jQuery for simplicity
-$(document).ready(function () {
-  var cursor = $(".custom-cursor");
-  
-  // Following the cursor position
-  $(window).mousemove(function(e) {
-    gsap.to(cursor, {
-      x: e.clientX,
-      y: e.clientY,
-      duration: 0.3
-    });
+// Get the cursor element
+const cursor = document.querySelector(".cursor");
+
+// Register mousemove event listener on the document
+document.addEventListener("mousemove", moveCursor);
+
+// Function to move the cursor
+function moveCursor(event) {
+  // Get the mouse position
+  const mouseX = event.clientX;
+  const mouseY = event.clientY;
+
+  // Use GSAP to animate the cursor's position
+  gsap.to(cursor, {
+    x: mouseX,
+    y: mouseY,
+    duration: 0.3,
+    ease: "power2.out",
   });
-
-  $("#selected-work").hover(
-    function() {
-      // Mouse enters the section
-      gsap.to(cursor, {
-        width: "2rem",
-        height: "2rem",
-        opacity: 1,
-        duration: 0.3
-      });
-    },
-    function() {
-      // Mouse leaves the section
-      gsap.to(cursor, {
-        width: "0rem",
-        height: "0rem",
-        opacity: 0,
-        duration: 0.3
-      });
-    }
-  );
-
-  $("#selected-work a").hover(
-    function() {
-      // Mouse enters the link
-      gsap.to(cursor, {
-        width: "4rem",
-        height: "4rem",
-        duration: 0.3
-      });
-    },
-    function() {
-      // Mouse leaves the link
-      gsap.to(cursor, {
-        width: "2rem",
-        height: "2rem",
-        duration: 0.3
-      });
-    }
-  );
-});
+}
