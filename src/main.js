@@ -81,15 +81,11 @@ $(document).ready(function() {
     // Get the value of the project-name attribute
     var projectName = $(this).attr('project-name');
 
-    // Set the text of the .text-target element
+    // Set the text of the two .text-target elements
     $('.text-target').text(projectName);
 
-    // Get the width of the .text-target
+    // Get the width of one .text-target (since you'll be moving one off screen at a time)
     var targetWidth = $('.text-target').width();
-
-    // As there are 3 .text-target elements in .cursor-text_wrapper grid, 
-    // multiply targetWidth by 3
-    targetWidth *= 3;
 
     // Create a GSAP timeline
     tl = gsap.timeline({repeat: -1}); // repeat indefinitely
