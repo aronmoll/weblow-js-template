@@ -78,14 +78,10 @@ document.addEventListener("mousemove", moveCursor);
 
 // Function to move the cursor
 function moveCursor(event) {
-  // Get the mouse position
-  const mouseX = event.clientX;
-  const mouseY = event.clientY;
-
   // Use GSAP to animate the cursor's position
   gsap.to(cursor, {
-    x: mouseX,
-    y: mouseY,
+    x: event.clientX,
+    y: event.clientY,
     duration: 0.3,
     ease: "power2.out",
   });
