@@ -28,16 +28,35 @@ requestAnimationFrame(raf)
 const items = document.querySelectorAll('.slider-item')
 
 items.forEach(item => {
-    gsap.to(item.querySelector('.slider-image'), {
-        yPercent: 50,
-        ease: 'none',
-        scrollTrigger: {
-            trigger: '.selected-work_wrapper',
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true
-        }
-    })
+    // Apply parallax effect on .slider-image
+    const sliderImage = item.querySelector('.slider-image')
+    if (sliderImage) {
+        gsap.to(sliderImage, {
+            yPercent: 50,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: item,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true
+            }
+        })
+    }
+    
+    // Apply parallax effect on video
+    const video = item.querySelector('.w-background-video-atom video')
+    if (video) {
+        gsap.to(video, {
+            yPercent: 50,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: item,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true
+            }
+        })
+    }
 })
 
 const buttons = document.querySelectorAll('.nav-button');
@@ -69,4 +88,3 @@ gsap.to(element, {
     scrub: true,
   },
 });
-
