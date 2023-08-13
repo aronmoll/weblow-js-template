@@ -76,6 +76,17 @@ for (let i = 0; i < sections.length; i++) {
   })
 }
 
+gsap.to(".projects-heading", {
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".projects-intro_wrapper",
+    start: "top top",
+    end: "bottom top",
+    scrub: true
+  }
+});
+
+
 // Select the fixed element with the attribute "rotate"
 const element = document.querySelector('[rotate]');
 
